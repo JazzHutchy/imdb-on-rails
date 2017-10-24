@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /movies
   # GET /movies.json
   def index
@@ -11,6 +11,8 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
+    @reviews = Review.where(movie_id: params[:id])
+    @average_score = Review.where(movie_id: params[:id]).average(:score)
   end
 
   # GET /movies/new

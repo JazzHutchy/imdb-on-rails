@@ -11,3 +11,9 @@ Movie.create!(name: 'The Grand Budapest Hotel', year_released: 2014, genre: "Adv
 Movie.create!(name: 'Flubber', year_released: 1997, genre: "Kids", description: "Professor Philip Brainard (Robin Williams) is experimenting with new kinds of energy, and he thinks this project will save struggling Medfield College, where his girlfriend, Sara (Marcia Gay Harden), is president. But when he discovers a lively, rubber-like substance dubbed 'flubber', he gets so excited, he absent-mindedly misses his own wedding. Sara dumps him, so he tries to use his discovery to win her back; unfortunately, the mischievous flubber seems to have a mind of its own.")
 
 Movie.create!(name: 'Napoleon Dynamite', year_released: 2004, genre: "Comedy", description: "In small-town Preston, Idaho, awkward teen Napoleon Dynamite (Jon Heder) has trouble fitting in. After his grandmother is injured in an accident, his life is made even worse when his strangely nostalgic uncle, Rico (Jon Gries), shows up to keep an eye on him. With no safe haven at home or at school, Napoleon befriends the new kid, Pedro (Efren Ramirez), a morose Hispanic boy who speaks little English. Together the two launch a campaign to run for class president.")
+
+Review.create!(title: 'Great movie, Wes Anderson is a genius', score: 9, content: "It's the most emotionally satisfying Anderson film since Rushmore, and its quirks and whimsies are kept right on the edge of indulgence without ever actually tipping over.", movie_id: 1)
+
+ Review.create!(title: 'I enjoyed it', score: 8, content: "Wes Anderson's superb eye for visual storytelling comes to a head with this luscious murder mystery that starts out in an exclusive luxury hotel and thrills the audience throughout Europe.", movie_id: 1)
+
+ Review.create!(title: 'It was a peice of shit', score: 2, content: "I didn't like it. It wasn't my cup of tea. I need some pickle rick!", movie_id: 1)

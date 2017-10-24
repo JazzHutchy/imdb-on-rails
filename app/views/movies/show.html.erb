@@ -1,24 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @movie.name %>
-</p>
+<div class="jumbotron container">
+  <div class="row">  
+    <div class="col-md-5">
+    <a href="https://placeholder.com"><img src="http://via.placeholder.com/270x380"></a>
+    </div>
+    <div class="col-md-7">
+      <div>
+        <p>
+          <strong>Genre:</strong>
+          <%= @movie.genre %> ||
+          <strong>Year released:</strong>
+          <%= @movie.year_released %>
+        </p>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @movie.genre %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          <%= @movie.description %>
+        </p>
 
-<p>
-  <strong>Year released:</strong>
-  <%= @movie.year_released %>
-</p>
+        <div class="<%= colorize_box(@average_score) %> w-25 text-light text-center py-3">
+        <h1 class="display-4"><%= '%.1f' % @average_score %></h1>
+        </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @movie.description %>
-</p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<% @reviews.each do|review| %>
+  <span><strong><%=review.title%></strong><p class ="float-right">⭐️<%=review.score%> | <%=review.created_at %></p></span>
+  <hr class="float-fixer">
+  <p><%= review.content%></p>  
+<%end%>
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
