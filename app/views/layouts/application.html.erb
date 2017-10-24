@@ -8,12 +8,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="bg-secondary">
 
-  <div class='container'>
+  <div class="container border bg-white">
     <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills float-right">
+            <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary' %>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+
             <li class="nav-item">
               <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
             </li>

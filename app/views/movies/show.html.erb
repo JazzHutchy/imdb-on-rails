@@ -20,7 +20,7 @@
         </p>
 
         <div class="<%= colorize_box(@average_score) %> w-25 text-light text-center py-3">
-        <h1 class="display-4"><%= '%.1f' % @average_score %></h1>
+        <h1 class="display-4"><%= '%.1f' % @average_score if @average_score %></h1>
         </div>
 
       </div>
