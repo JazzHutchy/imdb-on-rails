@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     @movie = nil
+   
   end
 
   # GET /movies/1

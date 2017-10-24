@@ -15,12 +15,14 @@
 
   <tbody>
     <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.name %></td>
-        <td><%= movie.genre %></td>
-        <td><%= movie.year_released %></td>
-        <td><%= movie.description %></td>
-        <td><%= link_to 'Show', movie %></td>
+      <tr class="border">
+        <td class="border"><a href="https://placeholder.com"><img src="http://via.placeholder.com/270x380"></a></td>
+        <td class="border"><%= movie.name %></td>
+        <td class="border"><%= movie.genre %></td>
+        <td class="border"><%= movie.year_released %></td>
+        <td class="border"><%= movie.description %></td>
+        <td class="border <%=colorize_box(average_review(movie).to_f) %>"><%= average_review(movie) %></td>
+        <td class="border"><%= link_to 'Show', movie %></td>
       </tr>
     <% end %>
   </tbody>

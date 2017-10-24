@@ -10,4 +10,10 @@ module MoviesHelper
     'bg-inverse'
     end
   end
+
+  def average_review(movie)
+    average =  Review.where(movie: movie).average(:score)
+    '%.1f' % average if average
+  end
+
 end
