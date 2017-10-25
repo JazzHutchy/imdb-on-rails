@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
   def show
     @reviews = Review.where(movie_id: params[:id])
     @average_score = Review.where(movie_id: params[:id]).average(:score)
+    @review = Review.new
   end
 
   # GET /movies/new
@@ -34,7 +35,7 @@ class MoviesController < ApplicationController
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
       else
-        format.html { render :new }
+        format.html { redirect_to @movie }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
     end
