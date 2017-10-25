@@ -3,7 +3,7 @@
 <div class="jumbotron container">
   <div class="row">  
     <div class="col-md-5">
-    <a href="https://placeholder.com"><img src="http://via.placeholder.com/270x380"></a>
+    <a href="https://placeholder.com"><img src="http://via.placeholder.com/310x380"></a>
     </div>
     <div class="col-md-7">
       <div>
@@ -32,6 +32,8 @@
   <span><strong><%=review.title%></strong> | <strong><%=User.find(review.user_id).name%></strong><p class ="float-right">⭐️<%=review.score%> | <%=review.created_at %></p></span>
   <hr class="float-fixer">
   <p><%= review.content%></p>  
-<%end%>
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<% end %>
+
+
+<%= render partial: 'reviews/form', review: @review %>
+
