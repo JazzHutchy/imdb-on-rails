@@ -29,7 +29,7 @@
 </div>
 
 <% @reviews.each do|review| %>
-  <span><strong><%=review.title%></strong><p class ="float-right">⭐️<%=review.score%> | <%=review.created_at %></p></span>
+  <span><strong><%=review.title%></strong><strong><%=review.user_id%></strong><p class ="float-right">⭐️<%=review.score%> | <%=review.created_at %></p></span>
   <hr class="float-fixer">
   <p><%= review.content%></p>  
 <%end%>
