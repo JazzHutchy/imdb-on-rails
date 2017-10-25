@@ -18,7 +18,8 @@ module MoviesHelper
     '%.1f' % average if average
   end
 
-  def review_name(id)
+  def review_user(value)
+    User.find(value)
      #get the 'name' attribute tied to 'user_id' under reviews
   end
 
